@@ -29,7 +29,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EYP-jA-cAu" kind="show" id="SSB-Ph-kZj"/>
+                                    <segue destination="EYP-jA-cAu" kind="show" identifier="addReceipt" id="SSB-Ph-kZj"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UG0-6l-tqY">
@@ -65,6 +65,7 @@
                     <navigationItem key="navigationItem" id="qyJ-AI-Lf8"/>
                     <connections>
                         <outlet property="myTableView" destination="UG0-6l-tqY" id="YV1-4r-C1g"/>
+                        <segue destination="MA8-NF-oov" kind="show" identifier="showDetail" id="53P-qu-Acf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -93,7 +94,7 @@
                                 <rect key="frame" x="36" y="340" width="303" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhb-Ht-buo">
                                 <rect key="frame" x="36" y="400" width="303" height="30"/>
@@ -147,7 +148,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ca-6y-lBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736.8" y="37.331334332833585"/>
+            <point key="canvasLocation" x="1756" y="-173"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="zgL-zR-fgP">
+            <objects>
+                <viewController id="MA8-NF-oov" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s72-3t-bva"/>
+                        <viewControllerLayoutGuide type="bottom" id="L1J-Ww-7MG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VTI-q6-stG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnT-iP-fLR">
+                                <rect key="frame" x="140.5" y="124" width="93" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBJ-Vg-ztY">
+                                <rect key="frame" x="169.5" y="177.5" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBL-mh-VQj">
+                                <rect key="frame" x="36" y="323" width="303" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xnT-iP-fLR" firstAttribute="centerX" secondItem="VTI-q6-stG" secondAttribute="centerX" id="BAg-q6-ugc"/>
+                            <constraint firstItem="xnT-iP-fLR" firstAttribute="top" secondItem="s72-3t-bva" secondAttribute="bottom" constant="60" id="HQQ-Nl-4vs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HBL-mh-VQj" secondAttribute="trailing" constant="20" id="HtW-Ts-DEY"/>
+                            <constraint firstItem="HBL-mh-VQj" firstAttribute="centerY" secondItem="VTI-q6-stG" secondAttribute="centerY" id="QhS-09-9Ny"/>
+                            <constraint firstItem="zBJ-Vg-ztY" firstAttribute="top" secondItem="xnT-iP-fLR" secondAttribute="bottom" constant="20" id="TJc-CA-Q6e"/>
+                            <constraint firstItem="zBJ-Vg-ztY" firstAttribute="centerX" secondItem="VTI-q6-stG" secondAttribute="centerX" id="XTX-gP-tak"/>
+                            <constraint firstItem="HBL-mh-VQj" firstAttribute="centerX" secondItem="VTI-q6-stG" secondAttribute="centerX" id="YKs-O3-NZE"/>
+                            <constraint firstItem="HBL-mh-VQj" firstAttribute="leading" secondItem="VTI-q6-stG" secondAttribute="leadingMargin" constant="20" id="ytF-lg-iXq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="xnT-iP-fLR" id="qst-Wm-b8y"/>
+                        <outlet property="dateLabel" destination="zBJ-Vg-ztY" id="Mxt-t8-pco"/>
+                        <outlet property="noteLabel" destination="HBL-mh-VQj" id="fCw-id-8tG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vq2-BO-hVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1755" y="479"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VWX-8M-7zI">

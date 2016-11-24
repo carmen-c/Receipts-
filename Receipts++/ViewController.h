@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface ViewController : UIViewController
-
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 

@@ -15,6 +15,7 @@
 		1FF4A0AF1DE773FC00D7199D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF4A0AE1DE773FC00D7199D /* Assets.xcassets */; };
 		1FF4A0B21DE773FC00D7199D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF4A0B01DE773FC00D7199D /* LaunchScreen.storyboard */; };
 		1FF4A0BD1DE77A8800D7199D /* newTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4A0BC1DE77A8800D7199D /* newTagViewController.m */; };
+		1FF4A0C01DE786C400D7199D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4A0BF1DE786C400D7199D /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		1FF4A0B31DE773FC00D7199D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FF4A0BB1DE77A8800D7199D /* newTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newTagViewController.h; sourceTree = "<group>"; };
 		1FF4A0BC1DE77A8800D7199D /* newTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newTagViewController.m; sourceTree = "<group>"; };
+		1FF4A0BE1DE786C400D7199D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1FF4A0BF1DE786C400D7199D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				1FF4A0A51DE773FC00D7199D /* ViewController.h */,
 				1FF4A0A61DE773FC00D7199D /* ViewController.m */,
 				1FF4A0BB1DE77A8800D7199D /* newTagViewController.h */,
+				1FF4A0BE1DE786C400D7199D /* DetailViewController.h */,
+				1FF4A0BF1DE786C400D7199D /* DetailViewController.m */,
 				1FF4A0BC1DE77A8800D7199D /* newTagViewController.m */,
 			);
 			name = Controller;
@@ -179,6 +184,7 @@
 				1FF4A0A41DE773FC00D7199D /* AppDelegate.m in Sources */,
 				1FF4A0BD1DE77A8800D7199D /* newTagViewController.m in Sources */,
 				1FF4A0A11DE773FC00D7199D /* main.m in Sources */,
+				1FF4A0C01DE786C400D7199D /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
