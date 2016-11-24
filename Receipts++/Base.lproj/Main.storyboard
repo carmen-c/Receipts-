@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="972" y="38.23088455772114"/>
         </scene>
-        <!--View Controller-->
+        <!--New Tag View Controller-->
         <scene sceneID="Utu-9k-KLo">
             <objects>
-                <viewController id="EYP-jA-cAu" sceneMemberID="viewController">
+                <viewController id="EYP-jA-cAu" customClass="newTagViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TWf-pE-x2K"/>
                         <viewControllerLayoutGuide type="bottom" id="VvD-7s-K79"/>
@@ -113,6 +113,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="EYP-jA-cAu" eventType="touchUpInside" id="r0M-gj-W18"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,6 +138,12 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="amountTextField" destination="0fa-xh-H6Z" id="5ze-uy-9GA"/>
+                        <outlet property="noteTextField" destination="Mhb-Ht-buo" id="amK-qx-kS4"/>
+                        <outlet property="pickDate" destination="914-hh-ycm" id="4eY-Dc-RM1"/>
+                        <outlet property="tagTextField" destination="OCF-9N-I8U" id="FWC-wR-jkK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ca-6y-lBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
