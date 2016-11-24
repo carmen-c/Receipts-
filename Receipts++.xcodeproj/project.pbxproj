@@ -60,15 +60,11 @@
 		1FF4A09E1DE773FC00D7199D /* Receipts++ */ = {
 			isa = PBXGroup;
 			children = (
-				1FF4A0A21DE773FC00D7199D /* AppDelegate.h */,
-				1FF4A0A31DE773FC00D7199D /* AppDelegate.m */,
-				1FF4A0A51DE773FC00D7199D /* ViewController.h */,
-				1FF4A0A61DE773FC00D7199D /* ViewController.m */,
 				1FF4A0A81DE773FC00D7199D /* Main.storyboard */,
-				1FF4A0AE1DE773FC00D7199D /* Assets.xcassets */,
 				1FF4A0B01DE773FC00D7199D /* LaunchScreen.storyboard */,
-				1FF4A0B31DE773FC00D7199D /* Info.plist */,
 				1FF4A0AB1DE773FC00D7199D /* Receipts__.xcdatamodeld */,
+				1FF4A0BA1DE777FC00D7199D /* Model */,
+				1FF4A0B91DE777E900D7199D /* Controller */,
 				1FF4A09F1DE773FC00D7199D /* Supporting Files */,
 			);
 			path = "Receipts++";
@@ -77,9 +73,29 @@
 		1FF4A09F1DE773FC00D7199D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1FF4A0B31DE773FC00D7199D /* Info.plist */,
+				1FF4A0AE1DE773FC00D7199D /* Assets.xcassets */,
 				1FF4A0A01DE773FC00D7199D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FF4A0B91DE777E900D7199D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1FF4A0A51DE773FC00D7199D /* ViewController.h */,
+				1FF4A0A61DE773FC00D7199D /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1FF4A0BA1DE777FC00D7199D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FF4A0A21DE773FC00D7199D /* AppDelegate.h */,
+				1FF4A0A31DE773FC00D7199D /* AppDelegate.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
