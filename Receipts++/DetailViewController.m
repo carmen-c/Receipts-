@@ -24,7 +24,7 @@
 
 -(void)configureView{
     if (self.detailReceipt) {
-        self.amountLabel.text = [NSString stringWithFormat:@"%f",self.detailReceipt.amount];
+        self.amountLabel.text = [NSString stringWithFormat:@"%.2f",self.detailReceipt.amount];
         self.dateLabel.text = self.detailReceipt.timeStamp.description;
         self.noteLabel.text = self.detailReceipt.note.description;
     }

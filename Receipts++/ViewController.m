@@ -24,6 +24,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    [self fetchReceipt];
+    
+  }
+
+#pragma mark - Fetches
+
+-(void)fetchTags{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Tag"];
+    NSSortDescriptor *sortByTag = [[NSSortDescriptor alloc]initWithKey:@"tagName" ascending:NO];
+    fetchRequest.sortDescriptors = @[sortByTag];
+    
+    self.frc = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    
+    self.frc.delegate = self;
+    NSError *fetchError = nil;
+    [self.frc performFetch:&fetchError];
+}
+
+-(void)fetchReceipt{
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Receipt"];
     NSSortDescriptor *sortByNote = [[NSSortDescriptor alloc]initWithKey:@"note" ascending:NO];
     fetchRequest.sortDescriptors = @[sortByNote];
@@ -33,8 +53,7 @@
     self.frc.delegate = self;
     NSError *fetchError = nil;
     [self.frc performFetch:&fetchError];
-    
-  }
+}
 
 #pragma mark - TableView
 
@@ -43,7 +62,9 @@
 }
 
 //-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    Tag *tag = [[Tag alloc]init];
+//    if () {
+//        
+//    }
 //}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -64,9 +85,19 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.receipts removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSManagedObjectContext *context = [self.frc managedObjectContext];
+        [context deleteObject:[self.frc objectAtIndexPath:indexPath]];
+        
+        NSError *error = nil;
+        if (![context save:&error]) {
+            NSLog(@"delete error: %@, %@", error, error.userInfo);
+            abort();
+        }
     }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
  #pragma mark - Navigation
