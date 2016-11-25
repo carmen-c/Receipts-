@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "newTagViewController.h"
 #import "DetailViewController.h"
-#import "LHLCoreDataStack.h"
+//#import "LHLCoreDataStack.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
