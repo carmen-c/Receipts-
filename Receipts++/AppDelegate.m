@@ -17,6 +17,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+//    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+//    
+//    UINavigationController *rootNavigationController = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"rootNavigationController"];
+//    
+//    ViewController *viewController = (ViewController *)[rootNavigationController topViewController];
+//    if ([viewController isKindOfClass:[ViewController class]]) {
+//        [viewController setManagedObjectContext:self.managedObjectContext];
+//    }
+//    
+//    // Configure Window
+//    [self.window setRootViewController:rootNavigationController];
+    
+    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+    ViewController *vc = (ViewController *)nav.topViewController;
+    vc.managedObjectContext = self.persistentContainer.viewContext;
 
     return YES;
 }

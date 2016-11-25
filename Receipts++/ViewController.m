@@ -9,12 +9,12 @@
 #import "ViewController.h"
 #import "newTagViewController.h"
 #import "DetailViewController.h"
-//#import "LHLCoreDataStack.h"
+#import "LHLCoreDataStack.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic) newTagViewController *nTagVC;
-@property (nonatomic) LHLCoreDataStack *stack;
+//@property (nonatomic) LHLCoreDataStack *stack;
 @property (nonatomic) NSFetchedResultsController *frc;
 @property (nonatomic) NSMutableArray *receipts;
 @end
@@ -24,13 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.stack = [[LHLCoreDataStack alloc]init];
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Receipt"];
     NSSortDescriptor *sortByTag = [[NSSortDescriptor alloc]initWithKey:@"note" ascending:NO];
     fetchRequest.sortDescriptors = @[sortByTag];
     
-    self.frc = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest managedObjectContext:self.stack.context sectionNameKeyPath:nil cacheName:nil];
+    self.frc = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
     self.frc.delegate = self;
     NSError *fetchError = nil;
@@ -78,9 +76,12 @@
          
      }else if ([segue.identifier isEqualToString:@"addReceipt"]) {
          newTagViewController *newtagVC = segue.destinationViewController;
-         [newtagVC setManagedObjectContext:self.stack.context];
+         [newtagVC setManagedObjectContext:self.managedObjectContext];
      }
  }
+
+
+#pragma mark - Fetch stuff
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {

@@ -11,6 +11,6 @@
 #import "Receipts__+CoreDataModel.h"
 
 @interface ViewController : UIViewController
-
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
 
