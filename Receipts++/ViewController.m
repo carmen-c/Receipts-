@@ -25,8 +25,8 @@
     [super viewDidLoad];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Receipt"];
-    NSSortDescriptor *sortByTag = [[NSSortDescriptor alloc]initWithKey:@"note" ascending:NO];
-    fetchRequest.sortDescriptors = @[sortByTag];
+    NSSortDescriptor *sortByNote = [[NSSortDescriptor alloc]initWithKey:@"note" ascending:NO];
+    fetchRequest.sortDescriptors = @[sortByNote];
     
     self.frc = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
@@ -41,6 +41,10 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[self.frc sections]count];
 }
+
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//    Tag *tag = [[Tag alloc]init];
+//}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.frc sections] objectAtIndex:section];
@@ -68,10 +72,10 @@
  #pragma mark - Navigation
 
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     if ([[segue identifier]isEqualToString:@"showDetail"]) {
+     if ([[segue identifier]isEqualToString:@"viewDetail"]) {
          NSIndexPath *indexPath = [self.myTableView indexPathForSelectedRow];
          Receipt *detailReceipt = [self.frc objectAtIndexPath:indexPath];
-         DetailViewController *detailVC = (DetailViewController *)[segue destinationViewController];
+         DetailViewController *detailVC = segue.destinationViewController;
          [detailVC setDetailReceipt:detailReceipt];
          
      }else if ([segue.identifier isEqualToString:@"addReceipt"]) {

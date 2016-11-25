@@ -23,8 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ML-hG-eeo">
-                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="628" width="375" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="lf6-Yf-dac"/>
+                                </constraints>
                                 <state key="normal" title="Add Receipt">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -33,7 +36,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UG0-6l-tqY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="565"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="eed-7a-o4Q">
@@ -43,6 +46,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="MA8-NF-oov" kind="show" identifier="viewDetail" id="ZqY-YC-bQd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -54,7 +60,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UG0-6l-tqY" secondAttribute="trailing" id="4gt-pv-JGi"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UG0-6l-tqY" secondAttribute="bottom" constant="30" id="LsO-Ck-gwG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UG0-6l-tqY" secondAttribute="bottom" constant="38" id="LsO-Ck-gwG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9ML-hG-eeo" secondAttribute="bottom" id="ctv-ry-Ozk"/>
                             <constraint firstAttribute="trailing" secondItem="9ML-hG-eeo" secondAttribute="trailing" id="vC0-PF-KBl"/>
                             <constraint firstItem="UG0-6l-tqY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wdB-fB-xn2"/>
@@ -65,7 +71,6 @@
                     <navigationItem key="navigationItem" id="qyJ-AI-Lf8"/>
                     <connections>
                         <outlet property="myTableView" destination="UG0-6l-tqY" id="YV1-4r-C1g"/>
-                        <segue destination="MA8-NF-oov" kind="show" identifier="showDetail" id="53P-qu-Acf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -120,6 +125,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ali-m5-g3m" firstAttribute="centerX" secondItem="yri-VI-ADe" secondAttribute="centerX" id="06v-fj-jua"/>
                             <constraint firstItem="Ali-m5-g3m" firstAttribute="top" secondItem="OCF-9N-I8U" secondAttribute="bottom" constant="60" id="4C9-fs-z5s"/>
@@ -136,6 +142,9 @@
                             <constraint firstItem="Mhb-Ht-buo" firstAttribute="top" secondItem="0fa-xh-H6Z" secondAttribute="bottom" constant="30" id="rfT-aJ-u05"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OCF-9N-I8U" secondAttribute="trailing" constant="20" id="yi5-q8-qD5"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZAI-Bp-wOb" appends="YES" id="L3S-g8-Vks"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -147,6 +156,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ca-6y-lBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZAI-Bp-wOb">
+                    <connections>
+                        <action selector="tapView:" destination="EYP-jA-cAu" id="gGO-3e-RKn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1756" y="-173"/>
         </scene>

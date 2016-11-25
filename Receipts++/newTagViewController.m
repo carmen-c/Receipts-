@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *noteTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tagTextField;
 
+
 @end
 
 @implementation newTagViewController
@@ -22,12 +23,24 @@
     [super viewDidLoad];
 }
 
+- (IBAction)tapView:(id)sender {
+    [self.amountTextField resignFirstResponder];
+    [self.noteTextField resignFirstResponder];
+    [self.tagTextField resignFirstResponder];
+}
+
 - (IBAction)doneButton:(id)sender {
+    
+    
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *record = [[NSManagedObject alloc]initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
-    [record setValue:self.amountTextField.text forKey:@"amount"];
+    //[record setValue:self.amountTextField.text forKey:@"amount"];
     [record setValue:self.noteTextField.text forKey:@"note"];
     [record setValue:self.pickDate.date forKey:@"timeStamp"];
+    
+    NSEntityDescription *tag = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *tagged = [[NSManagedObject alloc]initWithEntity:tag insertIntoManagedObjectContext:self.managedObjectContext];
+    [tagged setValue:self.tagTextField.text forKey:@"tagName"];
     
     NSError *error = nil;
     if ([self.managedObjectContext save:&error]) {
