@@ -16,6 +16,8 @@
 @property (nonatomic) newTagViewController *nTagVC;
 //@property (nonatomic) LHLCoreDataStack *stack;
 @property (nonatomic) NSFetchedResultsController *frc;
+@property (nonatomic) NSFetchedResultsController *frc2;
+@property (nonatomic) NSMutableArray *tags;
 @property (nonatomic) NSMutableArray *receipts;
 @end
 
@@ -36,11 +38,12 @@
     NSSortDescriptor *sortByTag = [[NSSortDescriptor alloc]initWithKey:@"tagName" ascending:NO];
     fetchRequest.sortDescriptors = @[sortByTag];
     
-    self.frc = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    self.frc2 = [[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
-    self.frc.delegate = self;
+    self.frc2.delegate = self;
     NSError *fetchError = nil;
-    [self.frc performFetch:&fetchError];
+    [self.frc2 performFetch:&fetchError];
+    
 }
 
 -(void)fetchReceipt{
@@ -61,14 +64,15 @@
     return [[self.frc sections]count];
 }
 
-//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-//    if () {
-//        
-//    }
-//}
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    Tag *tag;
+    return @"header";
+}
+
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.frc sections] objectAtIndex:section];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.frc sections][section];
     return [sectionInfo numberOfObjects];
 }
 

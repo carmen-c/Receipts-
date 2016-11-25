@@ -12,6 +12,6 @@
     </entity>
     <elements>
         <element name="Receipt" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="Tag" positionX="-182" positionY="126" width="128" height="73"/>
+        <element name="Tag" positionX="-182" positionY="126" width="128" height="75"/>
     </elements>
 </model>

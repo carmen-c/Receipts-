@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *noteTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tagTextField;
-
+@property (nonatomic) NSMutableArray *tags;
 
 @end
 
@@ -44,10 +44,9 @@
     
     
     NSEntityDescription *tag = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
-    NSManagedObjectContext *tagged = [[NSManagedObject alloc]initWithEntity:tag insertIntoManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *tagged = [[NSManagedObject alloc]initWithEntity:tag insertIntoManagedObjectContext:self.managedObjectContext];
 
     [tagged setValue:self.tagTextField.text forKey:@"tagName"];
-    
     
     NSError *error = nil;
     if ([self.managedObjectContext save:&error]) {
