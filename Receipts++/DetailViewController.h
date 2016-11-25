@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Receipts__+CoreDataModel.h"
 
 @interface DetailViewController : UIViewController
-
+@property (nonatomic) Receipt *detailReceipt;
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface newTagViewController : UIViewController
-
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

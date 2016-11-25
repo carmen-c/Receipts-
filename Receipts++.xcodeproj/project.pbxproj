@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F5909571DE79D6000B35399 /* LHLCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5909561DE79D6000B35399 /* LHLCoreDataStack.m */; };
+		1F59095A1DE7AC0B00B35399 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5909591DE7AC0B00B35399 /* Receipt.m */; };
 		1FF4A0A11DE773FC00D7199D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4A0A01DE773FC00D7199D /* main.m */; };
 		1FF4A0A41DE773FC00D7199D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4A0A31DE773FC00D7199D /* AppDelegate.m */; };
 		1FF4A0A71DE773FC00D7199D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4A0A61DE773FC00D7199D /* ViewController.m */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F5909551DE79D6000B35399 /* LHLCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLCoreDataStack.h; sourceTree = "<group>"; };
+		1F5909561DE79D6000B35399 /* LHLCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLCoreDataStack.m; sourceTree = "<group>"; };
+		1F5909581DE7AC0B00B35399 /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
+		1F5909591DE7AC0B00B35399 /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
 		1FF4A09C1DE773FC00D7199D /* Receipts++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Receipts++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF4A0A01DE773FC00D7199D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FF4A0A21DE773FC00D7199D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,9 +98,9 @@
 				1FF4A0A51DE773FC00D7199D /* ViewController.h */,
 				1FF4A0A61DE773FC00D7199D /* ViewController.m */,
 				1FF4A0BB1DE77A8800D7199D /* newTagViewController.h */,
+				1FF4A0BC1DE77A8800D7199D /* newTagViewController.m */,
 				1FF4A0BE1DE786C400D7199D /* DetailViewController.h */,
 				1FF4A0BF1DE786C400D7199D /* DetailViewController.m */,
-				1FF4A0BC1DE77A8800D7199D /* newTagViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -104,6 +110,10 @@
 			children = (
 				1FF4A0A21DE773FC00D7199D /* AppDelegate.h */,
 				1FF4A0A31DE773FC00D7199D /* AppDelegate.m */,
+				1F5909581DE7AC0B00B35399 /* Receipt.h */,
+				1F5909591DE7AC0B00B35399 /* Receipt.m */,
+				1F5909551DE79D6000B35399 /* LHLCoreDataStack.h */,
+				1F5909561DE79D6000B35399 /* LHLCoreDataStack.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -179,6 +189,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F59095A1DE7AC0B00B35399 /* Receipt.m in Sources */,
+				1F5909571DE79D6000B35399 /* LHLCoreDataStack.m in Sources */,
 				1FF4A0AD1DE773FC00D7199D /* Receipts__.xcdatamodeld in Sources */,
 				1FF4A0A71DE773FC00D7199D /* ViewController.m in Sources */,
 				1FF4A0A41DE773FC00D7199D /* AppDelegate.m in Sources */,
@@ -339,6 +351,7 @@
 				1FF4A0B81DE773FC00D7199D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

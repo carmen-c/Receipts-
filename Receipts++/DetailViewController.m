@@ -19,7 +19,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self configureView];
+}
+
+-(void)configureView{
+    if (self.detailReceipt) {
+        self.amountLabel.text = @"";
+        self.dateLabel.text = self.detailReceipt.timeStamp.description;
+        self.noteLabel.text = self.detailReceipt.note.description;
+    }
+}
+
+-(void)setDetailReceipt:(Receipt *)newDetailReceipt{
+    if (_detailReceipt != newDetailReceipt) {
+        _detailReceipt = newDetailReceipt;
+        
+        [self configureView];
+    }
 }
 
 

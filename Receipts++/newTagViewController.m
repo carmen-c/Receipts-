@@ -23,14 +23,24 @@
 }
 
 - (IBAction)doneButton:(id)sender {
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *record = [[NSManagedObject alloc]initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+    [record setValue:self.amountTextField.text forKey:@"amount"];
+    [record setValue:self.noteTextField.text forKey:@"note"];
+    [record setValue:self.pickDate.date forKey:@"timeStamp"];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    NSError *error = nil;
+    if ([self.managedObjectContext save:&error]) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else{
+        if (error) {
+            NSLog(@"save error: %@, %@", error, error.localizedDescription);
+        }
+    }
+   
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-
-}
 
 
 
